@@ -25,6 +25,9 @@
 	 	transform-style: preserve-3d;
 	 	transition: all 1s;
 	 }
+	 .flip {
+	 	transform: rotateY(-180deg);
+	 }
 	 .front {
 	 	width: 280px;
 	 	height: 400px;
@@ -74,7 +77,8 @@
 	};
 
 	$('.stage').addEventListener('click', function() {
-		(this.style.transform == 'rotateY(0deg)' || !this.style.transform) ? this.style.transform = 'rotateY(-180deg)' : this.style.transform = 'rotateY(0deg)';
+		//(this.style.transform == 'rotateY(0deg)' || !this.style.transform) ? this.style.transform = 'rotateY(-180deg)' : this.style.transform = 'rotateY(0deg)';
+		this.classList.length === 1 ? this.classList.add('flip') : this.classList.remove('flip');
 	});
 })(); 
 </script>
